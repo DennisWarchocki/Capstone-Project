@@ -11,8 +11,7 @@ export default function HomePage() {
 				<meta key="description" name="description" content="Track nutrition and be happy" />
 			</Head>
 			<h1>Nutrition Trackr</h1>
+			<FoodForm />
 		</Layout>
 	);
 }
-
-FoodForm();

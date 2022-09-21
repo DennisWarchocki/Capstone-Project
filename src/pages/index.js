@@ -1,5 +1,6 @@
 import Head from 'next/head';
 
+import FoodForm from '../components/FoodForm';
 import Layout from '../components/Layout';
 
 export default function HomePage() {
@@ -13,3 +14,5 @@ export default function HomePage() {
 		</Layout>
 	);
 }
+
+FoodForm();

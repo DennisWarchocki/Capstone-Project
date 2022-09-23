@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 const App = () => {
 	const [value, setValue] = useState('');
-	const [todos, setTodos] = useState([
+	const [foods, setFoods] = useState([
 		{
 			id: nanoid(),
 			value: 'Schokomüsli',
@@ -36,7 +36,7 @@ const App = () => {
 				style={{display: 'flex', alignItems: 'flex-end'}}
 				onSubmit={event_ => {
 					event_.preventDefault();
-					setTodos([...todos, {id: nanoid(), value, done: false}]);
+					setFoods([...foods, {id: nanoid(), value, done: false}]);
 					setValue('');
 				}}
 			>
@@ -58,10 +58,10 @@ const App = () => {
 				<button type="submit">Add</button>
 			</form>
 			<ul style={{padding: 0}}>
-				{todos.map(todo => {
+				{foods.map(food => {
 					return (
 						<li
-							key={todo.id}
+							key={food.id}
 							style={{
 								display: 'flex',
 							}}
@@ -69,31 +69,31 @@ const App = () => {
 							<label
 								style={{
 									flex: 1,
-									textDecoration: todo.done && 'line-through',
+									textDecoration: food.done && 'line-through',
 								}}
 							>
 								<input
 									type="checkbox"
-									checked={todo.done}
+									checked={food.done}
 									onChange={event_ => {
-										setTodos(
-											todos.map(todo_ =>
-												todo_.id === todo.id
+										setFoods(
+											foods.map(food_ =>
+												food_.id === food.id
 													? {
-															...todo_,
+															...food_,
 															done: event_.target.checked,
 													  }
-													: todo_
+													: food_
 											)
 										);
 									}}
 								/>
-								{todo.value}
+								{food.value}
 							</label>
 							<button
 								type="button"
 								onClick={() => {
-									setTodos(todos.filter(todo_ => todo_.id !== todo.id));
+									setFoods(foods.filter(food_ => food_.id !== food.id));
 								}}
 							>
 								Delete

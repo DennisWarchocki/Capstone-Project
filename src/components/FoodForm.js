@@ -1,5 +1,32 @@
 import {nanoid} from 'nanoid';
 import {useState} from 'react';
+import styled from 'styled-components';
+
+const WidthBox = styled.div`
+	max-width: 500;
+	margin: 'auto';
+`;
+
+const FlexboxForm = styled.form`
+	display: flex;
+	align-items: flex-end;
+`;
+
+const FlexboxLabel = styled.label`
+	flex: 1;
+`;
+
+const FlexInput = styled.input`
+	width: 100%;
+`;
+
+const StlyedList = styled.ul`
+	padding: 0;
+`;
+
+const StyledListItems = styled.li`
+	display: flex;
+`;
 
 const App = () => {
 	const [value, setValue] = useState('');
@@ -31,41 +58,34 @@ const App = () => {
 		},
 	]);
 	return (
-		<div style={{maxWidth: 300, margin: 'auto'}}>
-			<form
-				style={{display: 'flex', alignItems: 'flex-end'}}
+		<WidthBox>
+			<FlexboxForm
 				onSubmit={event_ => {
 					event_.preventDefault();
 					setFoods([...foods, {id: nanoid(), value, done: false}]);
 					setValue('');
 				}}
 			>
-				<label style={{flex: 1}}>
-					Add your food here
+				<FlexboxLabel>
+					What did you eat today?
 					<br />
-					<input
+					<FlexInput
 						placeholder="e.g. Eggs and bacon"
 						autoFocus
 						required
 						type="text"
 						value={value}
-						style={{width: '100%'}}
 						onChange={event_ => {
 							setValue(event_.target.value);
 						}}
 					/>
-				</label>
+				</FlexboxLabel>
 				<button type="submit">Add</button>
-			</form>
-			<ul style={{padding: 0}}>
+			</FlexboxForm>
+			<StlyedList>
 				{foods.map(food => {
 					return (
-						<li
-							key={food.id}
-							style={{
-								display: 'flex',
-							}}
-						>
+						<StyledListItems key={food.id}>
 							<label
 								style={{
 									flex: 1,
@@ -98,11 +118,11 @@ const App = () => {
 							>
 								Delete
 							</button>
-						</li>
+						</StyledListItems>
 					);
 				})}
-			</ul>
-		</div>
+			</StlyedList>
+		</WidthBox>
 	);
 };
 

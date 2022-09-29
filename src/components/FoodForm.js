@@ -13,7 +13,7 @@ const App = () => {
 	const [foods, setFoods] = useState([
 		{
 			id: nanoid(),
-			value: 'Schokomüsli',
+			value: 'Bio-Müsli',
 			done: false,
 		},
 		{

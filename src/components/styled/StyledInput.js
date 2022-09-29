@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const FlexInput = styled.input`
+export const StyledInput = styled.input`
 	width: 100%;
 `;

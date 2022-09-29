@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FlexForm = styled.form`
+export const StyledForm = styled.form`
 	display: flex;
 	align-items: flex-end;
 `;

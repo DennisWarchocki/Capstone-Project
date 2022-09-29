@@ -1,12 +1,12 @@
 import {nanoid} from 'nanoid';
 import {useState} from 'react';
 
-import {FlexForm} from './styled/FlexForm';
-import {FlexInput} from './styled/FlexInput';
-import {LabelAsDone} from './styled/LabelAsDone';
+import {StyledDoneLabel} from './styled/StyledDoneLabel';
+import {StyledForm} from './styled/StyledForm';
+import {StyledInput} from './styled/StyledInput';
 import {StlyedList} from './styled/StyledList';
 import {StyledListItems} from './styled/StyledListItems';
-import {WidthBox} from './styled/WidthBox';
+import {StyledWidthBox} from './styled/StyledWidthBox';
 
 const App = () => {
 	const [value, setValue] = useState('');
@@ -38,18 +38,18 @@ const App = () => {
 		},
 	]);
 	return (
-		<WidthBox>
-			<FlexForm
+		<StyledWidthBox>
+			<StyledForm
 				onSubmit={event_ => {
 					event_.preventDefault();
 					setFoods([...foods, {id: nanoid(), value, done: false}]);
 					setValue('');
 				}}
 			>
-				<LabelAsDone>
+				<StyledDoneLabel>
 					What did you eat today?
 					<br />
-					<FlexInput
+					<StyledInput
 						placeholder="e.g. Eggs and bacon"
 						autoFocus
 						type="text"
@@ -58,14 +58,14 @@ const App = () => {
 							setValue(event_.target.value);
 						}}
 					/>
-				</LabelAsDone>
+				</StyledDoneLabel>
 				<button type="submit">Add</button>
-			</FlexForm>
+			</StyledForm>
 			<StlyedList>
 				{foods.map(food => {
 					return (
 						<StyledListItems key={food.id}>
-							<LabelAsDone done={food.done}>
+							<StyledDoneLabel done={food.done}>
 								<input
 									type="checkbox"
 									checked={food.done}
@@ -83,7 +83,7 @@ const App = () => {
 									}}
 								/>
 								{food.value}
-							</LabelAsDone>
+							</StyledDoneLabel>
 							<button
 								type="button"
 								onClick={() => {
@@ -96,7 +96,7 @@ const App = () => {
 					);
 				})}
 			</StlyedList>
-		</WidthBox>
+		</StyledWidthBox>
 	);
 };
 

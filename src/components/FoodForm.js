@@ -1,32 +1,12 @@
 import {nanoid} from 'nanoid';
 import {useState} from 'react';
-import styled from 'styled-components';
 
-const WidthBox = styled.div`
-	max-width: 500;
-	margin: 'auto';
-`;
-
-const FlexboxForm = styled.form`
-	display: flex;
-	align-items: flex-end;
-`;
-
-const FlexboxLabel = styled.label`
-	flex: 1;
-`;
-
-const FlexInput = styled.input`
-	width: 100%;
-`;
-
-const StlyedList = styled.ul`
-	padding: 0;
-`;
-
-const StyledListItems = styled.li`
-	display: flex;
-`;
+import {FlexForm} from './styled/FlexForm';
+import {FlexInput} from './styled/FlexInput';
+import {LabelAsDone} from './styled/LabelAsDone';
+import {StlyedList} from './styled/StyledList';
+import {StyledListItems} from './styled/StyledListItems';
+import {WidthBox} from './styled/WidthBox';
 
 const App = () => {
 	const [value, setValue] = useState('');
@@ -34,7 +14,7 @@ const App = () => {
 		{
 			id: nanoid(),
 			value: 'Schokomüsli',
-			done: true,
+			done: false,
 		},
 		{
 			id: nanoid(),
@@ -59,39 +39,33 @@ const App = () => {
 	]);
 	return (
 		<WidthBox>
-			<FlexboxForm
+			<FlexForm
 				onSubmit={event_ => {
 					event_.preventDefault();
 					setFoods([...foods, {id: nanoid(), value, done: false}]);
 					setValue('');
 				}}
 			>
-				<FlexboxLabel>
+				<LabelAsDone>
 					What did you eat today?
 					<br />
 					<FlexInput
 						placeholder="e.g. Eggs and bacon"
 						autoFocus
-						required
 						type="text"
 						value={value}
 						onChange={event_ => {
 							setValue(event_.target.value);
 						}}
 					/>
-				</FlexboxLabel>
+				</LabelAsDone>
 				<button type="submit">Add</button>
-			</FlexboxForm>
+			</FlexForm>
 			<StlyedList>
 				{foods.map(food => {
 					return (
 						<StyledListItems key={food.id}>
-							<label
-								style={{
-									flex: 1,
-									textDecoration: food.done && 'line-through',
-								}}
-							>
+							<LabelAsDone done={food.done}>
 								<input
 									type="checkbox"
 									checked={food.done}
@@ -109,7 +83,7 @@ const App = () => {
 									}}
 								/>
 								{food.value}
-							</label>
+							</LabelAsDone>
 							<button
 								type="button"
 								onClick={() => {

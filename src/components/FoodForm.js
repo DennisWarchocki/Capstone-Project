@@ -9,6 +9,7 @@ import {StyledListItems} from './styled/StyledListItems';
 import {StyledWidthBox} from './styled/StyledWidthBox';
 
 const App = () => {
+	const [calories, setCalories] = useState(0);
 	const [value, setValue] = useState('');
 	const [foods, setFoods] = useState([
 		{
@@ -74,6 +75,11 @@ const App = () => {
 									type="checkbox"
 									checked={food.done}
 									onChange={event_ => {
+										if (food.done) {
+											setCalories(calories - food.calories);
+										} else {
+											setCalories(calories + food.calories);
+										}
 										setFoods(
 											foods.map(food_ =>
 												food_.id === food.id
@@ -91,6 +97,9 @@ const App = () => {
 							<button
 								type="button"
 								onClick={() => {
+									if (food.done) {
+										setCalories(calories - food.calories);
+									}
 									setFoods(foods.filter(food_ => food_.id !== food.id));
 								}}
 							>
@@ -100,6 +109,7 @@ const App = () => {
 					);
 				})}
 			</StlyedList>
+			<div>total calories consumed today:{calories}</div>
 		</StyledWidthBox>
 	);
 };

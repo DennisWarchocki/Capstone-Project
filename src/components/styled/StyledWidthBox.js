@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledWidthBox = styled.div`
-	max-width: 500;
-	margin: 'auto';
+	max-width: 500px;
+	margin: 25px;
 `;

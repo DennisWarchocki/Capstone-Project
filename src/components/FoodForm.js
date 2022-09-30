@@ -40,22 +40,21 @@ const App = () => {
 	return (
 		<StyledWidthBox>
 			<StyledForm
-				onSubmit={event_ => {
-					event_.preventDefault();
+				onSubmit={event => {
+					event.preventDefault();
 					setFoods([...foods, {id: nanoid(), value, done: false}]);
 					setValue('');
 				}}
 			>
 				<StyledDoneLabel>
 					What did you eat today?
-					<br />
 					<StyledInput
 						placeholder="e.g. Eggs and bacon"
-						autoFocus
 						type="text"
+						maxlength="5"
 						value={value}
-						onChange={event_ => {
-							setValue(event_.target.value);
+						onChange={event => {
+							setValue(event.target.value);
 						}}
 					/>
 				</StyledDoneLabel>

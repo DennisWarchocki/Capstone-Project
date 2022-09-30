@@ -51,7 +51,7 @@ const App = () => {
 					<StyledInput
 						placeholder="e.g. Eggs and bacon"
 						type="text"
-						maxlength="5"
+						maxLength="40"
 						value={value}
 						onChange={event => {
 							setValue(event.target.value);

@@ -27,6 +27,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# scratch
+.scratch
+
 # cypress
 cypress/downloads
 cypress/videos

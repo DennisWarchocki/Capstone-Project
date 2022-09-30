@@ -15,26 +15,31 @@ const App = () => {
 			id: nanoid(),
 			value: 'Bio-Müsli',
 			done: false,
+			calories: 660,
 		},
 		{
 			id: nanoid(),
 			value: 'Spiegelei',
 			done: false,
+			calories: 420,
 		},
 		{
 			id: nanoid(),
 			value: '1 Banane',
 			done: false,
+			calories: 90,
 		},
 		{
 			id: nanoid(),
 			value: 'Walnüsse',
 			done: false,
+			calories: 140,
 		},
 		{
 			id: nanoid(),
 			value: 'Franzbrötchen',
 			done: false,
+			calories: 375,
 		},
 	]);
 	return (

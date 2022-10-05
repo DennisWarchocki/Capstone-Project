@@ -1,5 +1,4 @@
 import Head from 'next/head';
-// import {useState} from 'react';
 
 import FoodForm from '../components/FoodForm';
 import Layout from '../components/Layout';
@@ -8,10 +7,10 @@ export default function HomePage() {
 	return (
 		<Layout>
 			<Head>
-				<title key="title">Nutrition Trackr</title>
+				<title key="title">Nutri Trackr</title>
 				<meta key="description" name="description" content="Track nutrition and be happy" />
 			</Head>
-			<h1>Nutrition Trackr</h1>
+			<h1>Nutri Trackr</h1>
 			<FoodForm />
 		</Layout>
 	);

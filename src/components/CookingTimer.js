@@ -1,31 +1,39 @@
+import {
+	StyledContainer,
+	StyledClock,
+	StyledTimeunits,
+	StyledRealtime,
+	StyledSection,
+} from '../components/styled/StyledTimer';
+
 const CookingTimer = ({timerDays, timerHours, timerMinutes, timerSeconds}) => {
 	return (
 		<>
-			<section className="timer-container">
-				<section className="timer">
-					<div className="clock">
-						<section>
-							<p>{timerDays}</p>
-							<small>Days</small>
-						</section>
+			<StyledContainer>
+				<StyledSection>
+					<StyledClock>
+						<StyledSection>
+							<StyledRealtime>{timerDays}</StyledRealtime>
+							<StyledTimeunits>Days</StyledTimeunits>
+						</StyledSection>
 						<span>:</span>
-						<section>
-							<p>{timerHours}</p>
-							<small>Hours</small>
-						</section>
+						<StyledSection>
+							<StyledRealtime>{timerHours}</StyledRealtime>
+							<StyledTimeunits>Hours</StyledTimeunits>
+						</StyledSection>
 						<span>:</span>
-						<section>
-							<p>{timerMinutes}</p>
-							<small>Minutes</small>
-						</section>
+						<StyledSection>
+							<StyledRealtime>{timerMinutes}</StyledRealtime>
+							<StyledTimeunits>Minutes</StyledTimeunits>
+						</StyledSection>
 						<span>:</span>
-						<section>
-							<p>{timerSeconds}</p>
-							<small>Seconds</small>
-						</section>
-					</div>
-				</section>
-			</section>
+						<StyledSection>
+							<StyledRealtime>{timerSeconds}</StyledRealtime>
+							<StyledTimeunits>Seconds</StyledTimeunits>
+						</StyledSection>
+					</StyledClock>
+				</StyledSection>
+			</StyledContainer>
 		</>
 	);
 };

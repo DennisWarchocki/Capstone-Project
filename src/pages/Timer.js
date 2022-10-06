@@ -8,52 +8,40 @@ function Timer() {
 	const [timerMinutes, setTimerMinutes] = useState();
 	const [timerSeconds, setTimerSeconds] = useState();
 
-	let interval;
+	const deadline = 'October, 8, 2022';
 
-	const startTimer = () => {
-		const CountDownDate = new Date('October 1, 2022').getTime();
+	function getTime() {
+		const time = Date.parse(deadline) - Date.now();
+		if (time > 0) {
+			setTimerDays(Math.floor(time / (24 * 60 * 60 * 1000)));
 
-		interval = setInterval(() => {
-			const now = new Date().getTime();
+			setTimerHours(Math.floor((time / (1000 * 60 * 60)) % 24));
 
-			const distance = CountDownDate - now;
+			setTimerMinutes(Math.floor((time / 1000 / 60) % 60));
 
-			const days = Math.floor(distance / (24 * 60 * 60 * 1000));
-
-			const hours = Math.floor(distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60);
-
-			const minutes = Math.floor(distance % (60 * 60 * 1000)) / (1000 * 60);
-
-			const seconds = Math.floor(distance % (60 * 1000)) / 1000;
-
-			if (distance < 0) {
-				//Stop Timer
-
-				clearInterval(interval.current);
-			} else {
-				// Update Timer
-				setTimerDays(days);
-				setTimerHours(hours);
-				setTimerMinutes(minutes);
-				setTimerSeconds(seconds);
-			}
-		});
-	};
+			setTimerSeconds(Math.floor((time / 1000) % 60));
+		} else {
+			setTimerDays(0);
+			setTimerHours(0);
+			setTimerMinutes(0);
+			setTimerSeconds(0);
+		}
+	}
 
 	useEffect(() => {
-		startTimer();
-	});
+		const interval = setInterval(() => getTime(deadline), 1000);
+		return () => clearInterval(interval);
+	}, []);
 
 	return (
-		<div className="App">
+		<>
 			<CookingTimer
 				timerDays={timerDays}
 				timerHours={timerHours}
 				timerMinutes={timerMinutes}
 				timerSeconds={timerSeconds}
 			/>
-		</div>
+		</>
 	);
 }
-
 export default Timer;

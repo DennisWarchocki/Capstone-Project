@@ -39,10 +39,10 @@ const CookingTimer = ({timerDays, timerHours, timerMinutes, timerSeconds}) => {
 };
 
 CookingTimer.defaultProps = {
-	timerDays: 0,
-	timerHours: 12,
-	timerMinutes: 45,
-	timerSeconds: 22,
+	timerDays: 1,
+	timerHours: 11,
+	timerMinutes: 11,
+	timerSeconds: 11,
 };
 
 export default CookingTimer;

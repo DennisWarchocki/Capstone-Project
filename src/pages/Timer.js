@@ -7,18 +7,24 @@ function Timer() {
 	const [timerHours, setTimerHours] = useState();
 	const [timerMinutes, setTimerMinutes] = useState();
 	const [timerSeconds, setTimerSeconds] = useState();
-	const [userInputDays, setUserInputDays] = useState();
-	const [userInputHours, setUserInputHours] = useState();
-	const [userInputMinutes, setUserInputMinutes] = useState();
-	const [userInputSeconds, setUserInputSeconds] = useState();
+	const [userInputDays, setUserInputDays] = useState(0);
+	const [userInputHours, setUserInputHours] = useState(0);
+	const [userInputMinutes, setUserInputMinutes] = useState(0);
+	const [userInputSeconds, setUserInputSeconds] = useState(0);
 
 	//Ich möchte dass der User z.B. eine Stundenanzahl eintragen kann, und dann der Countdown von dem Wert (z.B. 8h30min) runterzählt evtl statt 'October,8...' einfach Date.now() + (UserInput) = deadline ? und danach bei getTime deadline - date.now
 
 	//Fazit: ------>  -V- Date.now() + (UserTimeInput) = deadline
-	const deadline = 'October, 8, 2022';
-
+	const current = new Date();
+	const seconds = userInputSeconds * 1000;
+	const minutes = userInputMinutes * 60000;
+	const hours = userInputHours * (60000 * 60);
+	const days = userInputDays * (60000 * 60 * 24);
+	const now = Date.now() + seconds + minutes + hours + days;
+	const date = current.toLocaleString();
+	//const deadline = '10, 9, 2022 00:15:00 GMT';
 	function getTime() {
-		const time = Date.parse(deadline) - Date.now();
+		const time = now - Date.now();
 		if (time > 0) {
 			setTimerDays(Math.floor(time / (24 * 60 * 60 * 1000)));
 
@@ -36,9 +42,9 @@ function Timer() {
 	}
 
 	useEffect(() => {
-		const interval = setInterval(() => getTime(deadline), 1000);
+		const interval = setInterval(() => getTime(date), 1000);
 		return () => clearInterval(interval);
-	}, []);
+	}, [now]);
 
 	return (
 		<>
@@ -50,6 +56,7 @@ function Timer() {
 				}}
 			>
 				<input
+					type="number"
 					placeholder="type Days here"
 					userInputDays={userInputDays}
 					onChange={event => {
@@ -58,25 +65,28 @@ function Timer() {
 					}}
 				/>
 				<input
+					type="number"
 					placeholder="type hours here"
 					//value={value} -V-
 					userInputHours={userInputHours}
 					onChange={event => {
-						setUserInputHours(event.target.userInputHours);
+						setUserInputHours(event.target.value);
 					}}
 				/>
 				<input
+					type="number"
 					placeholder="type Minutes here"
 					userInputMinutes={userInputMinutes}
 					onChange={event => {
-						setUserInputMinutes(event.target.userInputMinutes);
+						setUserInputMinutes(event.target.value);
 					}}
 				/>
 				<input
+					type="number"
 					placeholder="type Seconds here"
 					userInputSeconds={userInputSeconds}
 					onChange={event => {
-						setUserInputSeconds(event.target.userInputSeconds);
+						setUserInputSeconds(event.target.value);
 					}}
 				/>
 			</form>

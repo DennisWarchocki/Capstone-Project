@@ -57,38 +57,37 @@ function Timer() {
 				}}
 			>
 				<StyledInput
-					type="number"
-					placeholder="type Days here"
-					value={userInputDays}
+					type="text"
 					maxLength="2"
+					value={userInputDays}
 					onChange={event => {
 						//(event.target.value) oder (event.target.UserInputDays?)
 						setUserInputDays(event.target.value);
 					}}
 				/>
 				<StyledInput
-					type="number"
+					type="text"
+					maxLength="2"
 					placeholder="type hours here"
 					value={userInputHours}
-					maxLength="2"
 					onChange={event => {
 						setUserInputHours(event.target.value);
 					}}
 				/>
 				<StyledInput
-					type="number"
+					type="text"
+					maxLength="2"
 					placeholder="type Minutes here"
 					value={userInputMinutes}
-					maxLength="2"
 					onChange={event => {
 						setUserInputMinutes(event.target.value);
 					}}
 				/>
 				<StyledInputTime
-					type="number"
+					type="text"
+					maxLength="2"
 					placeholder="type Seconds here"
 					value={userInputSeconds}
-					maxLength="2"
 					onChange={event => {
 						setUserInputSeconds(event.target.value);
 					}}

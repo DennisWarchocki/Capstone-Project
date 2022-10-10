@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react';
 
 import CookingTimer from '../components/CookingTimer';
 import Layout from '../components/Layout';
-import {StyledForm} from '../components/styled/StyledForm';
 import {StyledInputTime} from '../components/styled/StyledInput';
 
 function Timer() {
@@ -54,7 +53,7 @@ function Timer() {
 					timerMinutes={timerMinutes}
 					timerSeconds={timerSeconds}
 				/>
-				<StyledForm
+				<form
 					onSubmit={event => {
 						event.preventDefault();
 						setUserInputDays('');
@@ -97,7 +96,7 @@ function Timer() {
 							setUserInputSeconds(event.target.value);
 						}}
 					/>
-				</StyledForm>
+				</form>
 			</Layout>
 		</>
 	);

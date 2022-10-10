@@ -8,7 +8,6 @@ export const StyledContainer = styled.div`
 	height: 50vh;
 	margin: 0;
 	padding: 0;
-	background-color: beige;
 `;
 
 export const StyledSection = styled.section`

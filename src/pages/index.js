@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import Image from 'next/image';
 
+import {StyledNavButton} from '../components/styled/StyledNavButton';
 import {StyledTitle} from '../components/styled/StyledTitle';
 
 export default function HomePage() {
@@ -12,13 +13,12 @@ export default function HomePage() {
 			</Head>
 			<StyledTitle>Frontpage</StyledTitle>
 			<div>
-				<ol>
-					<li>put a img here</li>
-					<li>make a start button in the middle</li>
-					<li>remove navbar at the top</li>
-				</ol>
+				<StyledNavButton as="a" href="/timer">
+					Start
+				</StyledNavButton>
+				<Image src="" width="375px" height="667px" alt="hallo" />
 			</div>
-			<Link href="/timer">Start your journey!</Link>
 		</>
 	);
 }
+//Main Picture here  -^-

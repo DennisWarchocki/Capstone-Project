@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledNavListItems = styled.li`
 	flex-grow: 1;
-	padding: 17px 20px;
+	padding: 18px 22px;
 	background-color: red;
 	color: white;
 	font-size: 19px;
@@ -15,7 +15,7 @@ export const StyledNavListItems = styled.li`
 
 export const StyledNavUl = styled.ul`
 	display: flex;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 	list-style: none;
 `;

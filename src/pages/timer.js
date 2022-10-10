@@ -5,10 +5,10 @@ import Layout from '../components/Layout';
 import {StyledInput, StyledInputTime} from '../components/styled/StyledInput';
 
 function Timer() {
-	const [timerDays, setTimerDays] = useState();
-	const [timerHours, setTimerHours] = useState();
-	const [timerMinutes, setTimerMinutes] = useState();
-	const [timerSeconds, setTimerSeconds] = useState();
+	const [timerDays, setTimerDays] = useState(0);
+	const [timerHours, setTimerHours] = useState(0);
+	const [timerMinutes, setTimerMinutes] = useState(0);
+	const [timerSeconds, setTimerSeconds] = useState(0);
 	const [userInputDays, setUserInputDays] = useState(0);
 	const [userInputHours, setUserInputHours] = useState(0);
 	const [userInputMinutes, setUserInputMinutes] = useState(0);

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// upper div ( right under the Fragment)
 export const StyledContainer = styled.div`
 	display: flex;
 	flex-direction: column;

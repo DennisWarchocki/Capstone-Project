@@ -6,17 +6,18 @@ export const StyledContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 100vh;
+	height: 50vh;
 	margin: 0;
 	padding: 0;
-	background-color: lightseagreen;
+	background-color: beige;
 `;
 
 export const StyledSection = styled.section`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 1rem;
+	padding: 12px;
+	text-align: center;
 `;
 
 export const StyledClock = styled.div`
@@ -24,26 +25,22 @@ export const StyledClock = styled.div`
 	position: relative;
 	align-items: center;
 	justify-content: center;
-	width: 350px;
-	height: 180px;
-	margin: auto;
-	padding: 0;
-	border: 2px solid silver;
+	width: 275px;
+	padding: 20px;
+	border: 2px solid lightgray;
 	border-radius: 15px;
-	background-color: cornflowerblue;
-	box-shadow: 0 0 4px 12px;
-	color: aquamarine;
-	text-shadow: 1px 1px 7px;
+	background-color: #367e18;
+	color: #f57328;
 `;
 export const StyledRealtime = styled.p`
 	margin: 0;
 	padding: 0;
-	font-size: 4rem;
+	font-size: 2rem;
 `;
 
 export const StyledTimeunits = styled.small`
 	margin: 0;
 	padding: 0;
-	color: silver;
+	color: lightgrey;
 	text-shadow: none;
 `;

@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 
 import CookingTimer from '../components/CookingTimer';
+import Layout from '../components/Layout';
 import {StyledInput, StyledInputTime} from '../components/styled/StyledInput';
 
 function Timer() {
@@ -13,14 +14,10 @@ function Timer() {
 	const [userInputMinutes, setUserInputMinutes] = useState(0);
 	const [userInputSeconds, setUserInputSeconds] = useState(0);
 
-	//Ich möchte dass der User z.B. eine Stundenanzahl eintragen kann, und dann der Countdown von dem Wert (z.B. 8h30min) runterzählt evtl statt 'October,8...' einfach Date.now() + (UserInput) = deadline ? und danach bei getTime deadline - date.now
-
-	//Fazit: ------>  -V- Date.now() + (UserTimeInput) = deadline
 	const seconds = userInputSeconds * 1000;
 	const minutes = userInputMinutes * 60000;
 	const hours = userInputHours * (60000 * 60);
 	const days = userInputDays * (60000 * 60 * 24);
-	//const deadline = '10, 9, 2022 00:15:00 GMT';
 
 	useEffect(() => {
 		const now = Date.now() + seconds + minutes + hours + days;
@@ -49,57 +46,57 @@ function Timer() {
 
 	return (
 		<>
-			<form
-				onSubmit={event => {
-					event.preventDefault();
-					// setUserInput...wie spreche ich mehrere Inputs an?
-					setUserInputDays('');
-				}}
-			>
-				<StyledInput
-					type="text"
-					maxLength="2"
-					value={userInputDays}
-					onChange={event => {
-						//(event.target.value) oder (event.target.UserInputDays?)
-						setUserInputDays(event.target.value);
-					}}
+			<Layout>
+				<CookingTimer
+					timerDays={timerDays}
+					timerHours={timerHours}
+					timerMinutes={timerMinutes}
+					timerSeconds={timerSeconds}
 				/>
-				<StyledInput
-					type="text"
-					maxLength="2"
-					placeholder="type hours here"
-					value={userInputHours}
-					onChange={event => {
-						setUserInputHours(event.target.value);
+				<form
+					onSubmit={event => {
+						event.preventDefault();
+						setUserInputDays('');
 					}}
-				/>
-				<StyledInput
-					type="text"
-					maxLength="2"
-					placeholder="type Minutes here"
-					value={userInputMinutes}
-					onChange={event => {
-						setUserInputMinutes(event.target.value);
-					}}
-				/>
-				<StyledInputTime
-					type="text"
-					maxLength="2"
-					placeholder="type Seconds here"
-					value={userInputSeconds}
-					onChange={event => {
-						setUserInputSeconds(event.target.value);
-					}}
-				/>
-			</form>
-
-			<CookingTimer
-				timerDays={timerDays}
-				timerHours={timerHours}
-				timerMinutes={timerMinutes}
-				timerSeconds={timerSeconds}
-			/>
+				>
+					<label>Days:</label>
+					<StyledInput
+						type="text"
+						maxLength="2"
+						value={userInputDays}
+						onChange={event => {
+							setUserInputDays(event.target.value);
+						}}
+					/>
+					<label>Hours:</label>
+					<StyledInput
+						type="text"
+						maxLength="2"
+						value={userInputHours}
+						onChange={event => {
+							setUserInputHours(event.target.value);
+						}}
+					/>
+					<label>Minutes:</label>
+					<StyledInput
+						type="text"
+						maxLength="2"
+						value={userInputMinutes}
+						onChange={event => {
+							setUserInputMinutes(event.target.value);
+						}}
+					/>
+					<label>Seconds:</label>
+					<StyledInputTime
+						type="text"
+						maxLength="2"
+						value={userInputSeconds}
+						onChange={event => {
+							setUserInputSeconds(event.target.value);
+						}}
+					/>
+				</form>
+			</Layout>
 		</>
 	);
 }

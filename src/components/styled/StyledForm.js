@@ -1,6 +1,3 @@
 import styled from 'styled-components';
 
-export const StyledForm = styled.form`
-	display: flex;
-	align-items: flex-end;
-`;
+export const StyledForm = styled.form``;

@@ -8,7 +8,7 @@ import {StlyedList} from './styled/StyledList';
 import {StyledListItems} from './styled/StyledListItems';
 
 //Dummy Data - will be replaced with Data from the API
-const App = () => {
+const FoodForm = () => {
 	const [calories, setCalories] = useState(0);
 	const [value, setValue] = useState('');
 	const [foods, setFoods] = useState([
@@ -114,4 +114,4 @@ const App = () => {
 	);
 };
 
-export default App;
+export default FoodForm;

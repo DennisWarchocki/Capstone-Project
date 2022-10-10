@@ -10,8 +10,8 @@ export default function Header() {
 				<StyledNavListItems as="a" href="/where?">
 					Brokkoli
 				</StyledNavListItems>
-				<StyledNavListItems as="a" href="/where?">
-					Kartoffel
+				<StyledNavListItems as="a" href="/trackfood">
+					Food Tracker
 				</StyledNavListItems>
 			</StyledNavUl>
 		</>

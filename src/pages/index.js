@@ -12,7 +12,7 @@ export default function HomePage() {
 				<meta key="description" name="description" content="Track nutrition and be happy" />
 			</Head>
 			<StyledBackground>
-				<StyledTitle>Frontpage</StyledTitle>
+				<StyledTitle>Nutri Trackr</StyledTitle>
 				<div>
 					<StyledNavButton as="a" href="/timer">
 						Start

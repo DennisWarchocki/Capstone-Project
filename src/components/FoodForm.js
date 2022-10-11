@@ -6,9 +6,9 @@ import {StyledForm} from './styled/StyledForm';
 import {StyledInput} from './styled/StyledInput';
 import {StlyedList} from './styled/StyledList';
 import {StyledListItems} from './styled/StyledListItems';
-import {StyledWidthBox} from './styled/StyledWidthBox';
 
-const App = () => {
+//Dummy Data - will be replaced with Data from the API
+const FoodForm = () => {
 	const [calories, setCalories] = useState(0);
 	const [value, setValue] = useState('');
 	const [foods, setFoods] = useState([
@@ -44,7 +44,7 @@ const App = () => {
 		},
 	]);
 	return (
-		<StyledWidthBox>
+		<>
 			<StyledForm
 				onSubmit={event => {
 					event.preventDefault();
@@ -110,8 +110,8 @@ const App = () => {
 				})}
 			</StlyedList>
 			<div>total calories consumed today:{calories}</div>
-		</StyledWidthBox>
+		</>
 	);
 };
 
-export default App;
+export default FoodForm;

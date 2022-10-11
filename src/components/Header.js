@@ -1,19 +1,12 @@
-import {StyledNavListItems, StyledNavUl} from './styled/StyledNav';
+import Link from 'next/link';
 
 export default function Header() {
 	return (
-		<>
-			<StyledNavUl>
-				<StyledNavListItems as="a" href="/">
-					Home
-				</StyledNavListItems>
-				<StyledNavListItems as="a" href="/timer">
-					Timer
-				</StyledNavListItems>
-				<StyledNavListItems as="a" href="/trackfood">
-					Food Tracker
-				</StyledNavListItems>
-			</StyledNavUl>
-		</>
+		<header>
+			<nav>
+				<Link href="/">Home</Link>
+				<Link href="/about">About me</Link>
+			</nav>
+		</header>
 	);
 }

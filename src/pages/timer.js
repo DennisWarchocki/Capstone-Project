@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 
 import CookingTimer from '../components/CookingTimer';
 import {StyledInputTime} from '../components/styled/StyledInput';
+import {StyledNavUl} from '../components/styled/StyledNav';
 import {StyledNavbar} from '../components/styled/StyledNew';
 
 function Timer() {
@@ -46,10 +47,18 @@ function Timer() {
 
 	return (
 		<>
-			<StyledNavbar>Hallo Test</StyledNavbar>
-			<StyledNavbar>Hallo 3</StyledNavbar>
-			<StyledNavbar>Hallo 3</StyledNavbar>
+			<StyledNavUl>
+				<StyledNavbar as="a" href="/">
+					Home
+				</StyledNavbar>
 
+				<StyledNavbar as="a" href="/timer">
+					Timer
+				</StyledNavbar>
+				<StyledNavbar as="a" href="/trackfood">
+					Food Tracker
+				</StyledNavbar>
+			</StyledNavUl>
 			<CookingTimer
 				timerDays={timerDays}
 				timerHours={timerHours}

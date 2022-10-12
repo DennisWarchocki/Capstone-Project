@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+//must be edited further
 export const StyledNavButton = styled.button`
 	display: inline-flex;
 	margin-top: 240px;

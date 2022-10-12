@@ -1,19 +1,14 @@
-import {StyledNavListItems, StyledNavUl} from './styled/StyledNav';
+import {StyledBackground} from './styled/StyledBackground';
+import {StyledHeadbanner} from './styled/StyledNew';
 
 export default function Header() {
 	return (
 		<>
-			<StyledNavUl>
-				<StyledNavListItems as="a" href="/">
+			<StyledBackground>
+				<StyledHeadbanner as="a" href="/">
 					Home
-				</StyledNavListItems>
-				<StyledNavListItems as="a" href="/timer">
-					Timer
-				</StyledNavListItems>
-				<StyledNavListItems as="a" href="/trackfood">
-					Food Tracker
-				</StyledNavListItems>
-			</StyledNavUl>
+				</StyledHeadbanner>
+			</StyledBackground>
 		</>
 	);
 }

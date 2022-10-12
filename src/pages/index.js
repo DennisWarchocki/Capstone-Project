@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 import {StyledBackground} from '../components/styled/StyledBackground';
 import {StyledNavButton} from '../components/styled/StyledNavButton';
-import {StyledTitle} from '../components/styled/StyledTitle';
-
+import {StyledNavbar} from '../components/styled/StyledNew';
+import {StyledHeadbanner} from '../components/styled/StyledNew';
 export default function HomePage() {
 	return (
 		<>
@@ -12,12 +12,13 @@ export default function HomePage() {
 				<meta key="description" name="description" content="Track nutrition and be happy" />
 			</Head>
 			<StyledBackground>
-				<StyledTitle>Nutri Trackr</StyledTitle>
-				<div>
-					<StyledNavButton as="a" href="/timer">
-						Start
-					</StyledNavButton>
-				</div>
+				<StyledHeadbanner>Nutri Trackr</StyledHeadbanner>
+				<StyledNavButton as="a" href="/timer">
+					Start
+				</StyledNavButton>
+				<StyledNavbar as="a" href="/">
+					Home
+				</StyledNavbar>
 			</StyledBackground>
 		</>
 	);

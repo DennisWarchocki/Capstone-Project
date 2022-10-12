@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react';
 
 import CookingTimer from '../components/CookingTimer';
-import Layout from '../components/Layout';
 import {StyledInputTime} from '../components/styled/StyledInput';
+import {StyledNavbar} from '../components/styled/StyledNew';
 
 function Timer() {
 	const [timerDays, setTimerDays] = useState(0);
@@ -46,58 +46,60 @@ function Timer() {
 
 	return (
 		<>
-			<Layout>
-				<CookingTimer
-					timerDays={timerDays}
-					timerHours={timerHours}
-					timerMinutes={timerMinutes}
-					timerSeconds={timerSeconds}
-				/>
-				<form
-					onSubmit={event => {
-						event.preventDefault();
-						setUserInputDays('');
+			<StyledNavbar>Hallo Test</StyledNavbar>
+			<StyledNavbar>Hallo 3</StyledNavbar>
+			<StyledNavbar>Hallo 3</StyledNavbar>
+
+			<CookingTimer
+				timerDays={timerDays}
+				timerHours={timerHours}
+				timerMinutes={timerMinutes}
+				timerSeconds={timerSeconds}
+			/>
+			<form
+				onSubmit={event => {
+					event.preventDefault();
+					setUserInputDays('');
+				}}
+			>
+				<label>Days:</label>
+				<StyledInputTime
+					type="text"
+					size="20"
+					maxLength="2"
+					value={userInputDays}
+					onChange={event => {
+						setUserInputDays(event.target.value);
 					}}
-				>
-					<label>Days:</label>
-					<StyledInputTime
-						type="text"
-						size="20"
-						maxLength="2"
-						value={userInputDays}
-						onChange={event => {
-							setUserInputDays(event.target.value);
-						}}
-					/>
-					<label>Hours:</label>
-					<StyledInputTime
-						type="text"
-						maxLength="2"
-						value={userInputHours}
-						onChange={event => {
-							setUserInputHours(event.target.value);
-						}}
-					/>
-					<label>Minutes:</label>
-					<StyledInputTime
-						type="text"
-						maxLength="2"
-						value={userInputMinutes}
-						onChange={event => {
-							setUserInputMinutes(event.target.value);
-						}}
-					/>
-					<label>Seconds:</label>
-					<StyledInputTime
-						type="text"
-						maxLength="2"
-						value={userInputSeconds}
-						onChange={event => {
-							setUserInputSeconds(event.target.value);
-						}}
-					/>
-				</form>
-			</Layout>
+				/>
+				<label>Hours:</label>
+				<StyledInputTime
+					type="text"
+					maxLength="2"
+					value={userInputHours}
+					onChange={event => {
+						setUserInputHours(event.target.value);
+					}}
+				/>
+				<label>Minutes:</label>
+				<StyledInputTime
+					type="text"
+					maxLength="2"
+					value={userInputMinutes}
+					onChange={event => {
+						setUserInputMinutes(event.target.value);
+					}}
+				/>
+				<label>Seconds:</label>
+				<StyledInputTime
+					type="text"
+					maxLength="2"
+					value={userInputSeconds}
+					onChange={event => {
+						setUserInputSeconds(event.target.value);
+					}}
+				/>
+			</form>
 		</>
 	);
 }

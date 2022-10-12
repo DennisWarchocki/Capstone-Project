@@ -12,11 +12,12 @@ export const StyledNavListItems = styled.li`
 	text-align: center;
 	text-decoration: none;
 	&:hover {
-		background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/18000%;
+		background: #eef2e6 radial-gradient(circle, transparent 10%, #eef2e6 99%) center/15000%;
+		color: black;
 		text-decoration: underline;
 	}
 	&:active {
-		background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/18000%;
+		background: #eef2e6 radial-gradient(circle, transparent 10%, #eef2e6 99%) center/15000%;
 	}
 `;
 

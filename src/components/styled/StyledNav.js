@@ -4,7 +4,7 @@ export const StyledNavListItems = styled.li`
 	flex-grow: 1;
 	padding: 18px 20px;
 	transition: 0.8s;
-	background-color: red;
+	background-color: yellow;
 	background-position: center;
 	color: white;
 	font-size: 19px;

@@ -2,12 +2,11 @@ import styled from 'styled-components';
 
 export const StyledNavListItems = styled.li`
 	flex-grow: 1;
-	padding: 18px 20px;
+	padding: 24px 22px;
 	transition: 0.8s;
-	background-color: red;
-	background-position: center;
+	background-color: yellow;
 	color: white;
-	font-size: 19px;
+	font-size: 20px;
 	text-align: center;
 	text-decoration: none;
 	&:hover {

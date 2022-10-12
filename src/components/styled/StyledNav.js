@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
+//https://html-color.codes/green
+//Background: Malachite green
 export const StyledNavListItems = styled.li`
 	flex-grow: 1;
-	padding: 18px 20px;
+	padding: 22px 20px;
 	transition: 0.8s;
 	background-color: #0bda51;
 	color: white;
-	font-size: 19px;
+	font-size: 20px;
 	text-align: center;
 	text-decoration: none;
 	&:hover {

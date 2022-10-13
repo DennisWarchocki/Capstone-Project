@@ -109,6 +109,9 @@ function Timer() {
 					}}
 				/>
 			</form>
+			<form>
+				<input type="time" />
+			</form>
 		</>
 	);
 }

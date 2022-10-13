@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledInput = styled.input`
-	width: 120px;
+	width: 16vw;
 `;
 
 export const StyledInputTime = styled.input`

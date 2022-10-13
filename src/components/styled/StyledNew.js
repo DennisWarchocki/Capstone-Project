@@ -10,7 +10,7 @@ export const StyledHeadbanner = styled.div`
 export const StyledNavbar = styled.li`
 	flex-grow: 1;
 	padding: 22px 20px;
-	transition: 0.8s;
+	transition: 0.6s;
 	background-color: #0bda51;
 	color: white;
 	font-size: x-large;
@@ -18,11 +18,13 @@ export const StyledNavbar = styled.li`
 	text-align: center;
 	text-decoration: none;
 	&:hover {
-		background: #eef2e6 radial-gradient(circle, transparent 10%, #eef2e6 99%) center/15000%;
+		background: lightslategray radial-gradient(circle, transparent 99%, lightslategray 1%)
+			center/15000%;
 		color: black;
 		text-decoration: underline;
 	}
 	&:active {
-		background: #eef2e6 radial-gradient(circle, transparent 10%, #eef2e6 99%) center/15000%;
+		background: lightslategray radial-gradient(circle, transparent 99%, lightslategray 1%)
+			center/15000%;
 	}
 `;

@@ -52,18 +52,17 @@ const FoodForm = () => {
 					setValue('');
 				}}
 			>
-				<StyledDoneLabel>
-					What did you eat today?
-					<StyledInput
-						placeholder="e.g. Eggs and bacon"
-						type="text"
-						maxLength="40"
-						value={value}
-						onChange={event => {
-							setValue(event.target.value);
-						}}
-					/>
-				</StyledDoneLabel>
+				<StyledDoneLabel />
+				What did you eat today?
+				<StyledInput
+					placeholder="e.g. Eggs and bacon"
+					type="text"
+					maxLength="40"
+					value={value}
+					onChange={event => {
+						setValue(event.target.value);
+					}}
+				/>
 				<button type="submit">Add</button>
 			</StyledForm>
 			<StlyedList>

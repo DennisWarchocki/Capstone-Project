@@ -6,7 +6,8 @@ import {
 	StyledSection,
 } from '../components/styled/StyledTimer';
 
-const CookingTimer = ({timerDays, timerHours, timerMinutes, timerSeconds}) => {
+//add timerSeconds to display the Seconds aswell -V-
+const CookingTimer = ({timerDays, timerHours, timerMinutes}) => {
 	return (
 		<>
 			<StyledContainer>
@@ -25,11 +26,6 @@ const CookingTimer = ({timerDays, timerHours, timerMinutes, timerSeconds}) => {
 						<StyledSection>
 							<StyledRealtime>{timerMinutes}</StyledRealtime>
 							<StyledTimeunits>Minutes</StyledTimeunits>
-						</StyledSection>
-						<span>:</span>
-						<StyledSection>
-							<StyledRealtime>{timerSeconds}</StyledRealtime>
-							<StyledTimeunits>Seconds</StyledTimeunits>
 						</StyledSection>
 					</StyledClock>
 				</StyledSection>

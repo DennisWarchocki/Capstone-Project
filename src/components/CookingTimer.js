@@ -7,17 +7,12 @@ import {
 } from '../components/styled/StyledTimer';
 
 //add timerSeconds to display the Seconds aswell -V-
-const CookingTimer = ({timerDays, timerHours, timerMinutes}) => {
+const CookingTimer = ({timerHours, timerMinutes, timerSeconds}) => {
 	return (
 		<>
 			<StyledContainer>
 				<StyledSection>
 					<StyledClock>
-						<StyledSection>
-							<StyledRealtime>{timerDays}</StyledRealtime>
-							<StyledTimeunits>Days</StyledTimeunits>
-						</StyledSection>
-						<span>:</span>
 						<StyledSection>
 							<StyledRealtime>{timerHours}</StyledRealtime>
 							<StyledTimeunits>Hours</StyledTimeunits>
@@ -25,6 +20,11 @@ const CookingTimer = ({timerDays, timerHours, timerMinutes}) => {
 						<span>:</span>
 						<StyledSection>
 							<StyledRealtime>{timerMinutes}</StyledRealtime>
+							<StyledTimeunits>Minutes</StyledTimeunits>
+						</StyledSection>
+						<span>:</span>
+						<StyledSection>
+							<StyledRealtime>{timerSeconds}</StyledRealtime>
 							<StyledTimeunits>Minutes</StyledTimeunits>
 						</StyledSection>
 					</StyledClock>

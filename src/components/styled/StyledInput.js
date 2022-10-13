@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledInput = styled.input`
-	width: 16vw;
+	width: 60vw;
 `;
 
 export const StyledInputTime = styled.input`
-	width: 26px;
+	margin: 0.4rem;
 `;

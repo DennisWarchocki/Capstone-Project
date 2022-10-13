@@ -8,8 +8,12 @@ export default function AboutPage() {
 	return (
 		<>
 			<Head>
-				<title key="title">Food Tracker</title>
-				<meta key="description" name="Food tracker" content="track your food and macro" />
+				<title key="title">Nutri Trackr</title>
+				<meta
+					key="You can save here what you eat today"
+					name="Food tracker"
+					content="track your food and macros"
+				/>
 			</Head>
 			<StyledNavUl>
 				<StyledNavbar as="a" href="/">

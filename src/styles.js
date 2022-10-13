@@ -10,11 +10,11 @@ export const GlobalStyle = createGlobalStyle`
 	html {
 		font-size: 16px;
 	}
-
 	body {
 		margin: 0;
 		padding: 0;
-		background-color:#EEF2E6;
+		background-color:#00563f;
 		font-size: 1rem;
 	}
 `;
+//#EEF2E6 - white/beige

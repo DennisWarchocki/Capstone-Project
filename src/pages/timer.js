@@ -6,7 +6,7 @@ import {StyledListItems} from '../components/styled/StyledListItems';
 import {StyledNavUl} from '../components/styled/StyledNav';
 import {StyledNavbar} from '../components/styled/StyledNew';
 
-function Timer() {
+export default function Timer() {
 	const [timerDays, setTimerDays] = useState(0);
 	const [timerHours, setTimerHours] = useState(0);
 	const [timerMinutes, setTimerMinutes] = useState(0);
@@ -46,11 +46,15 @@ function Timer() {
 		return () => clearInterval(interval);
 	}, [seconds, minutes, hours]);
 
+	const mins = Array.from({length: 59}).map((_, i) => {
+		return i + 1;
+	});
+
 	return (
 		<>
 			<StyledNavUl>
-				<StyledNavbar as="a" href="/">
-					Home
+				<StyledNavbar as="a" href="/intro">
+					Intro
 				</StyledNavbar>
 
 				<StyledNavbar as="a" href="/timer">
@@ -108,19 +112,32 @@ function Timer() {
 			<br />
 			<br />
 
-			<form>
-				<label for="hours">minutes:</label>
+			<form
+				onSubmit={event => {
+					event.preventDefault();
+					const formData = new FormData(event.target);
+					const formValues = Object.fromEntries(formData);
+					setUserInputHours(formValues.hours);
+					setUserInputMinutes(formValues.minutes);
+				}}
+			>
+				<label for="hours">hours:</label>
+				<select name="hours">
+					{mins.map(option => {
+						return <option key={option}>{option}</option>;
+					})}
+				</select>
+				<label for="minutes">minutes:</label>
 				<select name="minutes">
-					<option value={userInputMinutes}>01</option>
-					<option value={userInputMinutes}>02</option>
-					<option value={userInputMinutes}>03</option>
-					<option value={userInputMinutes}>04</option>
-					<option value={userInputMinutes}>05</option>
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					<option>05</option>
+					<option>06</option>
 				</select>
 				<input type="submit" />
 			</form>
 		</>
 	);
 }
-
-export default Timer;

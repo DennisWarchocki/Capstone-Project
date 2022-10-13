@@ -1,19 +1,14 @@
 import Head from 'next/head';
 
-import FoodForm from '../components/FoodForm';
 import {StyledNavUl} from '../components/styled/StyledNav';
 import {StyledNavbar} from '../components/styled/StyledNew';
 
-export default function Trackfood() {
+export default function Intro() {
 	return (
 		<>
 			<Head>
 				<title key="title">Nutri Trackr</title>
-				<meta
-					key="You can save here what you eat today"
-					name="Food tracker"
-					content="track your food and macros"
-				/>
+				<meta key="description" name="description" content="Track nutrition and be happy" />
 			</Head>
 			<StyledNavUl>
 				<StyledNavbar as="a" href="/intro">
@@ -27,7 +22,7 @@ export default function Trackfood() {
 					Food Tracker
 				</StyledNavbar>
 			</StyledNavUl>
-			<FoodForm />
+			<p>hallo hallo</p>
 		</>
 	);
 }

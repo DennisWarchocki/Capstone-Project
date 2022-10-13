@@ -117,12 +117,7 @@ function Timer() {
 					<option value={userInputMinutes}>04</option>
 					<option value={userInputMinutes}>05</option>
 				</select>
-				<input
-					type="submit"
-					onSubmit={event => {
-						setUserInputMinutes(event.target.value);
-					}}
-				/>
+				<input type="submit" />
 			</form>
 		</>
 	);

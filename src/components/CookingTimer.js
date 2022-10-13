@@ -25,7 +25,7 @@ const CookingTimer = ({timerHours, timerMinutes, timerSeconds}) => {
 						<span>:</span>
 						<StyledSection>
 							<StyledRealtime>{timerSeconds}</StyledRealtime>
-							<StyledTimeunits>Minutes</StyledTimeunits>
+							<StyledTimeunits>Seconds</StyledTimeunits>
 						</StyledSection>
 					</StyledClock>
 				</StyledSection>

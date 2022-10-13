@@ -1,28 +1,16 @@
 import Head from 'next/head';
 
-import {StyledNavUl} from '../components/styled/StyledNav';
-import {StyledNavbar} from '../components/styled/StyledNew';
+import Header from '../components/Header';
 
 export default function Intro() {
 	return (
 		<>
 			<Head>
 				<title key="title">Nutri Trackr</title>
-				<meta key="description" name="description" content="Track nutrition and be happy" />
+				<meta key="description" name="Intro" content="how to use the app" />
 			</Head>
-			<StyledNavUl>
-				<StyledNavbar as="a" href="/intro">
-					Intro
-				</StyledNavbar>
-
-				<StyledNavbar as="a" href="/timer">
-					Timer
-				</StyledNavbar>
-				<StyledNavbar as="a" href="/trackfood">
-					Food Tracker
-				</StyledNavbar>
-			</StyledNavUl>
-			<p>hallo hallo</p>
+			<Header />
+			<p> Hallo</p>
 		</>
 	);
 }

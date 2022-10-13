@@ -53,7 +53,7 @@ export default function Timer() {
 	return (
 		<>
 			<StyledNavUl>
-				<StyledNavbar as="a" href="/intro">
+				<StyledNavbar as="a" href="/">
 					Intro
 				</StyledNavbar>
 

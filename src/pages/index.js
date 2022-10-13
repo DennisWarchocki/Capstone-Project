@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import {StyledBackground} from '../components/styled/StyledBackground';
-import {StyledNavbar} from '../components/styled/StyledNew';
+import {StyledHomeButton} from '../components/styled/StyledNavButton';
 import {StyledHeadbanner} from '../components/styled/StyledNew';
 export default function HomePage() {
 	return (
@@ -12,9 +12,9 @@ export default function HomePage() {
 			</Head>
 			<StyledBackground>
 				<StyledHeadbanner>Nutri Trackr</StyledHeadbanner>
-				<StyledNavbar as="a" href="/timer">
+				<StyledHomeButton as="a" href="/timer">
 					Start
-				</StyledNavbar>
+				</StyledHomeButton>
 			</StyledBackground>
 		</>
 	);

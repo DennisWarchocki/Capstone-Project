@@ -1,8 +1,19 @@
 import styled from 'styled-components';
 
 export const StyledHeadbanner = styled.div`
+	margin-top: 58px;
 	padding: 22px 20px;
 	background-color: #009150;
+	font-size: x-large;
+	text-align: center;
+`;
+
+export const StyledFootbanner = styled.div`
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 22px 20px;
+	background-color: yellow;
 	font-size: x-large;
 	text-align: center;
 `;

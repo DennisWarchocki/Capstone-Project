@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Header from '../components/Header';
+import {StyledHeadbanner} from '../components/styled/StyledNew';
 
 export default function Intro() {
 	return (
@@ -9,8 +9,10 @@ export default function Intro() {
 				<title key="title">Nutri Trackr</title>
 				<meta key="description" name="Intro" content="how to use the app" />
 			</Head>
-			<Header />
 			<p> Hallo</p>
+			<StyledHeadbanner>
+				<p>Hi</p>
+			</StyledHeadbanner>
 		</>
 	);
 }

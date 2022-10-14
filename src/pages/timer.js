@@ -37,8 +37,12 @@ export default function Timer() {
 		return () => clearInterval(interval);
 	}, [minutes, hours]);
 
-	const mins = Array.from({length: 23}).map((_, i) => {
-		return i + 1;
+	const selectHours = Array.from({length: 24}).map((_, i) => {
+		return i;
+	});
+
+	const selectMinutes = Array.from({length: 60}).map((_, i) => {
+		return i;
 	});
 
 	return (
@@ -77,18 +81,15 @@ export default function Timer() {
 					>
 						<label for="hours">hours:</label>
 						<select name="hours">
-							{mins.map(option => {
+							{selectHours.map(option => {
 								return <option key={option}>{option}</option>;
 							})}
 						</select>
 						<label for="minutes">minutes:</label>
 						<select name="minutes">
-							<option>01</option>
-							<option>02</option>
-							<option>03</option>
-							<option>04</option>
-							<option>05</option>
-							<option>06</option>
+							{selectMinutes.map(option => {
+								return <option key={option}>{option}</option>;
+							})}
 						</select>
 						<input type="submit" />
 					</form>

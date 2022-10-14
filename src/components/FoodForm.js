@@ -7,7 +7,6 @@ import {StyledInput} from './styled/StyledInput';
 import {StlyedList} from './styled/StyledList';
 import {StyledListItems} from './styled/StyledListItems';
 
-//Dummy Data - will be replaced with Data from the API
 const FoodForm = () => {
 	const [calories, setCalories] = useState(0);
 	const [value, setValue] = useState('');

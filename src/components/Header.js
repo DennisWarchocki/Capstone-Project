@@ -1,4 +1,4 @@
-import {StyledNavUl, StyledNavbar} from './styled/StyledNav';
+import {StyledNavUl, StyledNavbar} from './styled/StyledNew';
 
 export default function Header() {
 	return (

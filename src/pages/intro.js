@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import {StyledHeadbanner} from '../components/styled/StyledNew';
+import Header from '../components/Header';
 import {StyledFootbanner} from '../components/styled/StyledNew';
 
 export default function Intro() {
@@ -11,9 +11,7 @@ export default function Intro() {
 				<meta key="description" name="Intro" content="how to use the app" />
 			</Head>
 			<p> Hallo</p>
-			<StyledHeadbanner>
-				<p>Hi</p>
-			</StyledHeadbanner>
+			<Header />
 			<StyledFootbanner />
 		</>
 	);

@@ -42,11 +42,19 @@ const FoodForm = () => {
 			calories: 375,
 		},
 	]);
+
+	function foodSearch(myQuery) {
+		fetch(`http://localhost:3000/api/food/recipes?query=${myQuery}&number=1&max_fat=40`)
+			.then(response => response.json())
+			.then(json => console.log(json));
+	}
+
 	return (
 		<>
 			<StyledForm
 				onSubmit={event => {
 					event.preventDefault();
+					foodSearch(value);
 					setFoods([...foods, {id: nanoid(), value, done: false}]);
 					setValue('');
 				}}

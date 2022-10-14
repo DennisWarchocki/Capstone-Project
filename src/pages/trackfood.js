@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import FoodForm from '../components/FoodForm';
-import {StyledNavUl} from '../components/styled/StyledNav';
+import {StyledNavUl} from '../components/styled/StyledNew';
 import {StyledNavbar} from '../components/styled/StyledNew';
 import {StyledFootbanner} from '../components/styled/StyledNew';
 

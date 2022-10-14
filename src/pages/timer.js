@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 
 import CookingTimer from '../components/CookingTimer';
 import {StyledSelectContainer} from '../components/styled/StyledContainer';
-import {StyledNavUl} from '../components/styled/StyledNav';
+import {StyledNavUl} from '../components/styled/StyledNew';
 import {StyledFootbanner, StyledNavbar} from '../components/styled/StyledNew';
 
 export default function Timer() {

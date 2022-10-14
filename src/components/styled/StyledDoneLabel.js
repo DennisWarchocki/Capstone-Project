@@ -4,5 +4,3 @@ export const StyledDoneLabel = styled.label`
 	flex: 1;
 	text-decoration: ${props => (props.done ? `line-through` : `none`)};
 `;
-
-export const StyledInputLabel = styled.label``;

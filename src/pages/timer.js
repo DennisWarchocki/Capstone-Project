@@ -49,7 +49,7 @@ export default function Timer() {
 		<>
 			<section name="Header">
 				<StyledNavUl>
-					<StyledNavbar as="a" href="/">
+					<StyledNavbar as="a" href="/intro">
 						Intro
 					</StyledNavbar>
 

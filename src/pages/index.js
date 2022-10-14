@@ -12,7 +12,7 @@ export default function HomePage() {
 			</Head>
 			<StyledBackground>
 				<StyledHeadbanner>Nutri Trackr</StyledHeadbanner>
-				<StyledHomeButton as="a" href="/timer">
+				<StyledHomeButton as="a" href="/intro">
 					Start
 				</StyledHomeButton>
 			</StyledBackground>

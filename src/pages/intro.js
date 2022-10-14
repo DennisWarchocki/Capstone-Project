@@ -10,7 +10,6 @@ export default function Intro() {
 				<title key="title">Nutri Trackr</title>
 				<meta key="description" name="Intro" content="how to use the app" />
 			</Head>
-			<p> Hallo</p>
 			<Header />
 			<StyledFootbanner />
 		</>

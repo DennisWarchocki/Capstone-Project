@@ -11,5 +11,6 @@
   "editor.bracketPairColorization.enabled": true,
   "explorer.compactFolders": false,
   "eslint.format.enable": true,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "colorize.languages": ["javascript"]
 }

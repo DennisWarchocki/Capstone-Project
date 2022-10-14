@@ -79,13 +79,13 @@ export default function Timer() {
 							setUserInputMinutes(formValues.minutes);
 						}}
 					>
-						<label for="hours">hours:</label>
+						<label>hours:</label>
 						<select name="hours">
 							{selectHours.map(option => {
 								return <option key={option}>{option}</option>;
 							})}
 						</select>
-						<label for="minutes">minutes:</label>
+						<label>minutes:</label>
 						<select name="minutes">
 							{selectMinutes.map(option => {
 								return <option key={option}>{option}</option>;

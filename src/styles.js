@@ -17,4 +17,3 @@ export const GlobalStyle = createGlobalStyle`
 		font-size: 1rem;
 	}
 `;
-//#EEF2E6 - white/beige

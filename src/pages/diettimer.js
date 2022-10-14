@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import {StyledNavUl, StyledNavbar} from '../components/styled/StyledNav';
+import {StyledNavUl, StyledNavbar} from '../components/styled/StyledNew';
 
 export default function DietTimer() {
 	return (

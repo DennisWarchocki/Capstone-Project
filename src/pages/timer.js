@@ -1,9 +1,8 @@
 import {useState, useEffect} from 'react';
 
-import TestBackground from '../components/Background';
+import {BackgroundOven} from '../components/backgrounds/Background';
 import CookingTimer from '../components/CookingTimer';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 import {StyledSelectContainer} from '../components/styled/StyledContainer';
 
 export default function Timer() {
@@ -48,8 +47,9 @@ export default function Timer() {
 
 	return (
 		<>
-			<TestBackground />
-			<Header />
+			<BackgroundOven />
+			<Layout />
+
 			<section name="Countdown">
 				<CookingTimer
 					timerHours={timerHours}
@@ -84,7 +84,6 @@ export default function Timer() {
 					</form>
 				</StyledSelectContainer>
 			</section>
-			<Footer />
 		</>
 	);
 }

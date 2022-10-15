@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import TestBackground from '../components/Background';
+import {BackgroundEggs} from '../components/backgrounds/Background';
 import {StyledHomeButton} from '../components/styled/StyledNavButton';
 import {StyledHeadbanner} from '../components/styled/StyledNew';
 export default function HomePage() {
@@ -10,7 +10,7 @@ export default function HomePage() {
 				<title key="title">Nutri Trackr</title>
 				<meta key="description" name="description" content="Track nutrition and be happy" />
 			</Head>
-			<TestBackground />
+			<BackgroundEggs />
 			<StyledHeadbanner>Nutri Trackr</StyledHeadbanner>
 			<StyledHomeButton as="a" href="/intro">
 				Start

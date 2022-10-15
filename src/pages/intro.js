@@ -1,8 +1,7 @@
 import Head from 'next/head';
 
-import TestBackground from '../components/Background';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import {TestBackground} from '../components/backgrounds/Background';
+import Layout from '../components/Layout';
 
 export default function Intro() {
 	return (
@@ -12,8 +11,7 @@ export default function Intro() {
 				<meta key="description" name="Intro" content="how to use the app" />
 			</Head>
 			<TestBackground />
-			<Header />
-			<Footer />
+			<Layout />
 		</>
 	);
 }

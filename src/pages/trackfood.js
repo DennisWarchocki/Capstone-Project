@@ -1,9 +1,8 @@
 import Head from 'next/head';
 
-import TestBackground from '../components/Background';
+import {BackgroundSoup} from '../components/backgrounds/Background';
 import FoodForm from '../components/FoodForm';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 
 export default function Trackfood() {
 	return (
@@ -16,10 +15,9 @@ export default function Trackfood() {
 					content="track your food and macros"
 				/>
 			</Head>
-			<TestBackground />
-			<Header />
+			<BackgroundSoup />
+			<Layout />
 			<FoodForm />
-			<Footer />
 		</>
 	);
 }

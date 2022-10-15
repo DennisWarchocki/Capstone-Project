@@ -43,7 +43,7 @@ const FoodForm = () => {
 		},
 	]);
 
-	function foodSearch(myQuery) {
+	function FoodSearch(myQuery) {
 		fetch(`http://localhost:3000/api/food/recipes?query=${myQuery}&number=1&max_fat=40`)
 			.then(response => response.json())
 			.then(json => console.log(json));
@@ -54,22 +54,13 @@ const FoodForm = () => {
 			<StyledForm
 				onSubmit={event => {
 					event.preventDefault();
-					foodSearch(value);
+					FoodSearch(value);
 					setFoods([...foods, {id: nanoid(), value, done: false}]);
 					setValue('');
 				}}
 			>
-				<StyledDoneLabel />
 				What did you eat today?
-				<StyledInput
-					placeholder="e.g. Eggs and bacon"
-					type="text"
-					maxLength="40"
-					value={value}
-					onChange={event => {
-						setValue(event.target.value);
-					}}
-				/>
+				<StyledInput placeholder="e.g. Pasta" type="search" maxLength="40" />
 				<button type="submit">Add</button>
 			</StyledForm>
 			<StlyedList>

@@ -15,3 +15,13 @@ export default function Intro() {
 		</>
 	);
 }
+/*
+const [audio, setAudio] = useState(null);
+useEffect(() => {
+	setAudio(new Audio('../assets/sounds/alarmsound'));
+}, []);
+
+function playAlert() {
+	audio.play();
+}
+*/

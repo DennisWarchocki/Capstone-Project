@@ -1,9 +1,10 @@
 import {useState, useEffect} from 'react';
 
+import TestBackground from '../components/Background';
 import CookingTimer from '../components/CookingTimer';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import {StyledSelectContainer} from '../components/styled/StyledContainer';
-import {StyledNavUl} from '../components/styled/StyledNew';
-import {StyledFootbanner, StyledNavbar} from '../components/styled/StyledNew';
 
 export default function Timer() {
 	const [timerHours, setTimerHours] = useState(0);
@@ -47,20 +48,8 @@ export default function Timer() {
 
 	return (
 		<>
-			<section name="Header">
-				<StyledNavUl>
-					<StyledNavbar as="a" href="/intro">
-						Intro
-					</StyledNavbar>
-
-					<StyledNavbar as="a" href="/timer">
-						Timer
-					</StyledNavbar>
-					<StyledNavbar as="a" href="/trackfood">
-						Food Tracker
-					</StyledNavbar>
-				</StyledNavUl>
-			</section>
+			<TestBackground />
+			<Header />
 			<section name="Countdown">
 				<CookingTimer
 					timerHours={timerHours}
@@ -79,13 +68,13 @@ export default function Timer() {
 							setUserInputMinutes(formValues.minutes);
 						}}
 					>
-						<label>hours:</label>
+						<label htmlFor="hours">hours:</label>
 						<select name="hours">
 							{selectHours.map(option => {
 								return <option key={option}>{option}</option>;
 							})}
 						</select>
-						<label>minutes:</label>
+						<label htmlFor="minutes">minutes:</label>
 						<select name="minutes">
 							{selectMinutes.map(option => {
 								return <option key={option}>{option}</option>;
@@ -95,7 +84,7 @@ export default function Timer() {
 					</form>
 				</StyledSelectContainer>
 			</section>
-			<StyledFootbanner />
+			<Footer />
 		</>
 	);
 }

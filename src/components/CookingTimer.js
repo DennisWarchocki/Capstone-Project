@@ -6,7 +6,6 @@ import {
 	StyledSection,
 } from '../components/styled/StyledTimer';
 
-//add timerSeconds to display the Seconds aswell -V-
 const CookingTimer = ({timerHours, timerMinutes, timerSeconds}) => {
 	return (
 		<>

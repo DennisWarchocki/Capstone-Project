@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
+import TestBackground from '../components/Background';
 import FoodForm from '../components/FoodForm';
-import {StyledNavUl} from '../components/styled/StyledNew';
-import {StyledNavbar} from '../components/styled/StyledNew';
-import {StyledFootbanner} from '../components/styled/StyledNew';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 export default function Trackfood() {
 	return (
@@ -16,20 +16,10 @@ export default function Trackfood() {
 					content="track your food and macros"
 				/>
 			</Head>
-			<StyledNavUl>
-				<StyledNavbar as="a" href="/intro">
-					Intro
-				</StyledNavbar>
-
-				<StyledNavbar as="a" href="/timer">
-					Timer
-				</StyledNavbar>
-				<StyledNavbar as="a" href="/trackfood">
-					Food Tracker
-				</StyledNavbar>
-			</StyledNavUl>
+			<TestBackground />
+			<Header />
 			<FoodForm />
-			<StyledFootbanner />
+			<Footer />
 		</>
 	);
 }

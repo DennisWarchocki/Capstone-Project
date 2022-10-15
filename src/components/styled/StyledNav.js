@@ -5,7 +5,6 @@ export const StyledNavUl = styled.ul`
 	position: sticky;
 	justify-content: space-evenly;
 	width: 100%;
-	margin: 0;
-	margin-bottom: 40px;
+	margin: 0 0 0 40px;
 	padding: 0;
 `;

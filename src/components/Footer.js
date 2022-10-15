@@ -1,7 +1,15 @@
+import styled from 'styled-components';
+
 export default function Footer() {
-	return (
-		<footer>
-			<div></div>
-		</footer>
-	);
+	return <StyledFooter />;
 }
+
+const StyledFooter = styled.div`
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 22px 20px;
+	background-color: yellow;
+	font-size: x-large;
+	text-align: center;
+`;

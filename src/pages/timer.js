@@ -80,7 +80,17 @@ export default function Timer() {
 								return <option key={option}>{option}</option>;
 							})}
 						</select>
-						<input type="submit" />
+						<button type="submit">Start</button>
+						<button
+							onClick={event => {
+								event.preventDefault;
+								setTimerHours(0);
+								setTimerMinutes(0);
+								setTimerSeconds(0);
+							}}
+						>
+							End
+						</button>
 					</form>
 				</StyledSelectContainer>
 			</section>

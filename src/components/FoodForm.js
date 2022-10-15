@@ -8,6 +8,10 @@ import {StlyedList} from './styled/StyledList';
 import {StyledListItems} from './styled/StyledListItems';
 
 const FoodForm = () => {
+	const [data, setData] = useState(null);
+	{
+		console.log(data);
+	}
 	const [calories, setCalories] = useState(0);
 	const [value, setValue] = useState('');
 	const [foods, setFoods] = useState([
@@ -44,24 +48,57 @@ const FoodForm = () => {
 	]);
 
 	function FoodSearch(myQuery) {
-		fetch(`http://localhost:3000/api/food/recipes?query=${myQuery}&number=1&max_fat=40`)
+		fetch(`/api/food/recipes?query=${myQuery}&number=5&max_fat=40`)
 			.then(response => response.json())
-			.then(json => console.log(json));
+			.then(json => setData(json.results));
 	}
 
 	return (
 		<>
+			{data?.map(recipe => {
+				return (
+					<div key={recipe.id}>
+						<img src={recipe.image}></img>
+						<h2>{recipe.title}</h2>
+						<button
+							onClick={event => {
+								event.preventDefault();
+								setFoods([
+									...foods,
+									{
+										id: nanoid(),
+										value: recipe.title,
+										calories: recipe.nutrition.nutrients[0].amount,
+										done: false,
+									},
+								]);
+								setValue('');
+							}}
+						>
+							add
+						</button>
+						<p>{recipe.nutrition.nutrients[0].amount}</p>
+					</div>
+				);
+			})}
 			<StyledForm
 				onSubmit={event => {
 					event.preventDefault();
 					FoodSearch(value);
-					setFoods([...foods, {id: nanoid(), value, done: false}]);
-					setValue('');
 				}}
 			>
 				What did you eat today?
-				<StyledInput placeholder="e.g. Pasta" type="search" maxLength="40" />
-				<button type="submit">Add</button>
+				<StyledInput
+					value={value}
+					onChange={event => {
+						event.preventDefault();
+						setValue(event.target.value);
+					}}
+					placeholder="e.g. Pasta"
+					type="search"
+					maxLength="40"
+				/>
+				<button type="submit">search</button>
 			</StyledForm>
 			<StlyedList>
 				{foods.map(food => {

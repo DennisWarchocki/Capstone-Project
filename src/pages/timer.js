@@ -3,7 +3,10 @@ import {useState, useEffect} from 'react';
 import {BackgroundOven} from '../components/backgrounds/Background';
 import CookingTimer from '../components/CookingTimer';
 import Layout from '../components/Layout';
+import {StyledStartButton} from '../components/styled/StyledButton';
 import {StyledSelectContainer} from '../components/styled/StyledContainer';
+import {StyledTimeLabel} from '../components/styled/StyledLabel';
+import {StyledTransparent} from '../components/styled/StyledNew';
 
 export default function Timer() {
 	const [timerHours, setTimerHours] = useState(0);
@@ -14,6 +17,10 @@ export default function Timer() {
 
 	const minutes = userInputMinutes * 60000;
 	const hours = userInputHours * (60000 * 60);
+
+	function refresh() {
+		window.location.reload(false);
+	}
 
 	useEffect(() => {
 		const now = Date.now() + minutes + hours;
@@ -68,29 +75,29 @@ export default function Timer() {
 							setUserInputMinutes(formValues.minutes);
 						}}
 					>
-						<label htmlFor="hours">hours:</label>
-						<select name="hours">
-							{selectHours.map(option => {
-								return <option key={option}>{option}</option>;
-							})}
-						</select>
-						<label htmlFor="minutes">minutes:</label>
-						<select name="minutes">
-							{selectMinutes.map(option => {
-								return <option key={option}>{option}</option>;
-							})}
-						</select>
-						<button type="submit">Start</button>
-						<button
-							onClick={event => {
-								event.preventDefault;
-								setTimerHours(0);
-								setTimerMinutes(0);
-								setTimerSeconds(0);
-							}}
-						>
-							End
-						</button>
+						<StyledTransparent>
+							<StyledTimeLabel htmlFor="hours">Hours</StyledTimeLabel>
+							<select name="hours">
+								{selectHours.map(option => {
+									return <option key={option}>{option}</option>;
+								})}
+							</select>
+							<StyledTimeLabel htmlFor="minutes">Minutes</StyledTimeLabel>
+							<select name="minutes">
+								{selectMinutes.map(option => {
+									return <option key={option}>{option}</option>;
+								})}
+							</select>
+							<StyledStartButton type="submit">Start</StyledStartButton>
+							<button
+								onClick={event => {
+									event.preventDefault;
+									refresh();
+								}}
+							>
+								Reset
+							</button>
+						</StyledTransparent>
 					</form>
 				</StyledSelectContainer>
 			</section>

@@ -9,7 +9,7 @@ export const StyledHeadbanner = styled.div`
 
 export const StyledNavUl = styled.div`
 	display: flex;
-	position: fixed;
+	position: relative;
 	z-index: 1;
 	justify-content: space-evenly;
 	width: 100%;
@@ -42,4 +42,28 @@ export const StyledNavbar = styled.div`
 		background: lightslategray radial-gradient(circle, transparent 99%, lightslategray 1%)
 			center/15000%;
 	}
+`;
+
+export const StyledTransparent = styled.div`
+	display: flex;
+	justify-content: center;
+	padding: 40px;
+	border-radius: 16px;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+`;
+
+export const StyledFetch = styled.div`
+	border-radius: 16px;
+	background: rgba(200, 200, 200, 0);
+`;
+
+export const StyledCalories = styled.div`
+	display: flex;
+	justify-content: center;
+	margin: 16px;
+	padding: 6%;
+	border-radius: 16px;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
 `;

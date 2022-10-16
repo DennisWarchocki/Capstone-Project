@@ -25,9 +25,8 @@ export const StyledClock = styled.div`
 	justify-content: center;
 	width: 275px;
 	padding: 20px;
-	border: 2px solid lightgray;
 	border-radius: 15px;
-	background-color: #009150;
+	background: rgba(0, 0, 0, 0.5);
 	color: white;
 `;
 export const StyledRealtime = styled.p`

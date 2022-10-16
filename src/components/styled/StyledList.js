@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
 export const StlyedList = styled.ul`
-	padding: 0;
+	margin-top: 5%;
+	padding: 10%;
 `;

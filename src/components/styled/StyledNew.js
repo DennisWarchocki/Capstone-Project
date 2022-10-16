@@ -9,11 +9,11 @@ export const StyledHeadbanner = styled.div`
 
 export const StyledNavUl = styled.div`
 	display: flex;
-	position: relative;
+	position: fixed;
 	z-index: 1;
 	justify-content: space-evenly;
 	width: 100%;
-	margin: 0 0 20px;
+	margin: 0;
 `;
 
 //<div class="container">

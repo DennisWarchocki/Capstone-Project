@@ -14,38 +14,7 @@ const FoodForm = () => {
 	}
 	const [calories, setCalories] = useState(0);
 	const [value, setValue] = useState('');
-	const [foods, setFoods] = useState([
-		{
-			id: nanoid(),
-			value: 'Bio-Müsli',
-			done: false,
-			calories: 660,
-		},
-		{
-			id: nanoid(),
-			value: 'Spiegelei',
-			done: false,
-			calories: 420,
-		},
-		{
-			id: nanoid(),
-			value: '1 Banane',
-			done: false,
-			calories: 90,
-		},
-		{
-			id: nanoid(),
-			value: 'Walnüsse',
-			done: false,
-			calories: 140,
-		},
-		{
-			id: nanoid(),
-			value: 'Franzbrötchen',
-			done: false,
-			calories: 375,
-		},
-	]);
+	const [foods, setFoods] = useState([0]);
 
 	function FoodSearch(myQuery) {
 		fetch(`/api/food/recipes?query=${myQuery}&number=5&max_fat=40`)
@@ -58,7 +27,7 @@ const FoodForm = () => {
 			{data?.map(recipe => {
 				return (
 					<div key={recipe.id}>
-						<img src={recipe.image}></img>
+						<img src={recipe.image} alt="recipeImage"></img>
 						<h2>{recipe.title}</h2>
 						<button
 							onClick={event => {

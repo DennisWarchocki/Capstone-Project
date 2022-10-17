@@ -3,14 +3,14 @@ import {StyledNavUl, StyledNavbar} from './styled/StyledNew';
 export default function Header() {
 	return (
 		<StyledNavUl>
-			<StyledNavbar as="a" href="/intro">
-				Intro
-			</StyledNavbar>
-			<StyledNavbar as="a" href="/timer">
-				Timer
+			<StyledNavbar as="a" href="/">
+				HOME
 			</StyledNavbar>
 			<StyledNavbar as="a" href="/trackfood">
-				Food Tracker
+				RECIPES
+			</StyledNavbar>
+			<StyledNavbar as="a" href="/timer">
+				TIMER
 			</StyledNavbar>
 		</StyledNavUl>
 	);

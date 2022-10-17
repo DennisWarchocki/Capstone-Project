@@ -53,14 +53,7 @@ export const StyledTransparent = styled.div`
 	color: white;
 `;
 
-export const StyledFetch = styled.div`
-	border-radius: 16px;
-	background: rgba(200, 200, 200, 0);
-`;
-
 export const StyledCalories = styled.div`
-	display: flex;
-	justify-content: center;
 	margin: 16px;
 	padding: 6%;
 	border-radius: 16px;

@@ -2,6 +2,7 @@ import {nanoid} from 'nanoid';
 import {useState} from 'react';
 import styled from 'styled-components';
 
+import {StyledBlackButton, StyledWhiteButton} from './styled/StyledButtons';
 import {StyledResults} from './styled/StyledContainer';
 import {StyledDoneLabel} from './styled/StyledDoneLabel';
 import {StyledForm} from './styled/StyledForm';
@@ -10,7 +11,6 @@ import {StyledInput} from './styled/StyledInput';
 import {StyledAtag} from './styled/StyledLink';
 import {StlyedList} from './styled/StyledList';
 import {StyledListItems, StyledFetchItems} from './styled/StyledListItems';
-import {StyledBlackButton, StyledWhiteButton} from './styled/StyledNavButton';
 import {StyledCalories} from './styled/StyledNew';
 
 const StyledFetchButtons = styled.form`
@@ -190,7 +190,7 @@ const FoodForm = () => {
 				})}
 			</StlyedList>
 			<StyledCalories>
-				<div>total calories consumed today: {calories}</div>
+				<p>total calories consumed today: {calories}</p>
 			</StyledCalories>
 		</>
 	);

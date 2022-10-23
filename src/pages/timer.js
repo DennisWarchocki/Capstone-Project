@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 import {BackgroundOven} from '../components/backgrounds/Background';
 import CookingTimer from '../components/CookingTimer';
 import Layout from '../components/Layout';
-import {StyledStartButton} from '../components/styled/StyledButton';
+import {StyledStartButton} from '../components/styled/StyledButtons';
 import {StyledSelectContainer} from '../components/styled/StyledContainer';
 import {StyledTimeLabel} from '../components/styled/StyledLabel';
 import {StyledTransparent} from '../components/styled/StyledNew';

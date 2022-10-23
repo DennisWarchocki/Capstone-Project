@@ -8,11 +8,11 @@ export default function Trackfood() {
 	return (
 		<>
 			<Head>
-				<title key="title">Nutri Trackr</title>
+				<title key="title">Magic Meals</title>
 				<meta
-					key="You can save here what you eat today"
-					name="Food tracker"
-					content="track your food and macros"
+					key="You can search for a Meal"
+					name="Magic Meals"
+					content="provides Meals and Recipes with links to a cooking guide"
 				/>
 			</Head>
 			<BackgroundSoup />

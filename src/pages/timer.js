@@ -18,10 +18,6 @@ export default function Timer() {
 	const minutes = userInputMinutes * 60000;
 	const hours = userInputHours * (60000 * 60);
 
-	function refresh() {
-		window.location.reload(false);
-	}
-
 	useEffect(() => {
 		const now = Date.now() + minutes + hours;
 
@@ -90,10 +86,11 @@ export default function Timer() {
 							</select>
 							<StyledStartButton type="submit">Start</StyledStartButton>
 							<button
-								onClick={event => {
-									event.preventDefault;
-									refresh();
+								onClick={() => {
+									setUserInputHours(0);
+									setUserInputMinutes(0);
 								}}
+								type="reset"
 							>
 								Reset
 							</button>

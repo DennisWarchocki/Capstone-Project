@@ -16,12 +16,6 @@ export const StyledNavUl = styled.div`
 	margin: 0;
 `;
 
-//<div class="container">
-//<div class="black-box">Black box (z-index: 1)</div>
-//<div class="gray-box">Gray box (z-index: 3)</div>
-//<div class="green-box">Green box (z-index: 2)</div>
-//</div>
-
 export const StyledNavbar = styled.div`
 	position: relative;
 	flex-grow: 1;

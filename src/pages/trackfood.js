@@ -1,18 +1,23 @@
 import Head from 'next/head';
 
+import {BackgroundSoup} from '../components/backgrounds/Background';
 import FoodForm from '../components/FoodForm';
 import Layout from '../components/Layout';
-import {StyledTitle} from '../components/styled/StyledTitle';
 
-export default function AboutPage() {
+export default function Trackfood() {
 	return (
-		<Layout>
+		<>
 			<Head>
-				<title key="title">Food Tracker</title>
-				<meta key="description" name="Food tracker" content="track your food and macro" />
+				<title key="title">Magic Meals</title>
+				<meta
+					key="You can search for a Meal"
+					name="Magic Meals"
+					content="provides Meals and Recipes with links to a cooking guide"
+				/>
 			</Head>
-			<StyledTitle>Food Formular</StyledTitle>
+			<BackgroundSoup />
+			<Layout />
 			<FoodForm />
-		</Layout>
+		</>
 	);
 }

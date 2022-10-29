@@ -1,39 +1,35 @@
 import {useState, useEffect} from 'react';
 
+import {BackgroundOven} from '../components/backgrounds/Background';
 import CookingTimer from '../components/CookingTimer';
 import Layout from '../components/Layout';
-import {StyledInputTime} from '../components/styled/StyledInput';
+import {StyledStartButton} from '../components/styled/StyledButtons';
+import {StyledSelectContainer} from '../components/styled/StyledContainer';
+import {StyledTimeLabel} from '../components/styled/StyledLabel';
+import {StyledTransparent} from '../components/styled/StyledNew';
 
-function Timer() {
-	const [timerDays, setTimerDays] = useState(0);
+export default function Timer() {
 	const [timerHours, setTimerHours] = useState(0);
 	const [timerMinutes, setTimerMinutes] = useState(0);
 	const [timerSeconds, setTimerSeconds] = useState(0);
-	const [userInputDays, setUserInputDays] = useState(0);
 	const [userInputHours, setUserInputHours] = useState(0);
 	const [userInputMinutes, setUserInputMinutes] = useState(0);
-	const [userInputSeconds, setUserInputSeconds] = useState(0);
 
-	const seconds = userInputSeconds * 1000;
 	const minutes = userInputMinutes * 60000;
 	const hours = userInputHours * (60000 * 60);
-	const days = userInputDays * (60000 * 60 * 24);
 
 	useEffect(() => {
-		const now = Date.now() + seconds + minutes + hours + days;
+		const now = Date.now() + minutes + hours;
 
 		function getTime() {
 			const time = now - Date.now();
 			if (time > 0) {
-				setTimerDays(Math.floor(time / (24 * 60 * 60 * 1000)));
-
 				setTimerHours(Math.floor((time / (1000 * 60 * 60)) % 24));
 
 				setTimerMinutes(Math.floor((time / 1000 / 60) % 60));
 
 				setTimerSeconds(Math.floor((time / 1000) % 60));
 			} else {
-				setTimerDays(0);
 				setTimerHours(0);
 				setTimerMinutes(0);
 				setTimerSeconds(0);
@@ -42,64 +38,66 @@ function Timer() {
 
 		const interval = setInterval(() => getTime(now), 1000);
 		return () => clearInterval(interval);
-	}, [seconds, minutes, hours, days]);
+	}, [minutes, hours]);
+
+	const selectHours = Array.from({length: 24}).map((_, i) => {
+		return i;
+	});
+
+	const selectMinutes = Array.from({length: 60}).map((_, i) => {
+		return i;
+	});
 
 	return (
 		<>
-			<Layout>
+			<BackgroundOven />
+			<Layout />
+
+			<section name="Countdown">
 				<CookingTimer
-					timerDays={timerDays}
 					timerHours={timerHours}
 					timerMinutes={timerMinutes}
 					timerSeconds={timerSeconds}
 				/>
-				<form
-					onSubmit={event => {
-						event.preventDefault();
-						setUserInputDays('');
-					}}
-				>
-					<label>Days:</label>
-					<StyledInputTime
-						type="text"
-						size="20"
-						maxLength="2"
-						value={userInputDays}
-						onChange={event => {
-							setUserInputDays(event.target.value);
+			</section>
+			<section name="userSelectInput">
+				<StyledSelectContainer>
+					<form
+						onSubmit={event => {
+							event.preventDefault();
+							const formData = new FormData(event.target);
+							const formValues = Object.fromEntries(formData);
+							setUserInputHours(formValues.hours);
+							setUserInputMinutes(formValues.minutes);
 						}}
-					/>
-					<label>Hours:</label>
-					<StyledInputTime
-						type="text"
-						maxLength="2"
-						value={userInputHours}
-						onChange={event => {
-							setUserInputHours(event.target.value);
-						}}
-					/>
-					<label>Minutes:</label>
-					<StyledInputTime
-						type="text"
-						maxLength="2"
-						value={userInputMinutes}
-						onChange={event => {
-							setUserInputMinutes(event.target.value);
-						}}
-					/>
-					<label>Seconds:</label>
-					<StyledInputTime
-						type="text"
-						maxLength="2"
-						value={userInputSeconds}
-						onChange={event => {
-							setUserInputSeconds(event.target.value);
-						}}
-					/>
-				</form>
-			</Layout>
+					>
+						<StyledTransparent>
+							<StyledTimeLabel htmlFor="hours">Hours</StyledTimeLabel>
+							<select name="hours">
+								{selectHours.map(option => {
+									return <option key={option}>{option}</option>;
+								})}
+							</select>
+							<StyledTimeLabel htmlFor="minutes">Minutes</StyledTimeLabel>
+							<select name="minutes">
+								{selectMinutes.map(option => {
+									return <option key={option}>{option}</option>;
+								})}
+							</select>
+							<StyledStartButton type="submit">Start</StyledStartButton>
+							<button
+								onClick={() => {
+									setUserInputHours(0);
+									setUserInputMinutes(0);
+								}}
+								type="reset"
+							>
+								Reset
+							</button>
+						</StyledTransparent>
+					</form>
+				</StyledSelectContainer>
+			</section>
 		</>
 	);
 }
-
-export default Timer;

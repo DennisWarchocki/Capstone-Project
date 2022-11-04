@@ -8,7 +8,7 @@ import {StyledDoneLabel} from './styled/StyledDoneLabel';
 import {StyledForm} from './styled/StyledForm';
 import {StyledImageCenter} from './styled/StyledImage';
 import {StyledInput} from './styled/StyledInput';
-import {StyledAtag} from './styled/StyledLink';
+import {StyledLink} from './styled/StyledLink';
 import {StlyedList} from './styled/StyledList';
 import {StyledListItems, StyledFetchItems} from './styled/StyledListItems';
 import {StyledCalories} from './styled/StyledNew';
@@ -119,9 +119,9 @@ const FoodForm = () => {
 								</StyledFetchItems>
 								<StyledFetchButtons>
 									<StyledWhiteButton>
-										<StyledAtag href={recipe.sourceUrl}>
+										<StyledLink href={recipe.sourceUrl}>
 											Cooking Guide
-										</StyledAtag>
+										</StyledLink>
 									</StyledWhiteButton>
 									<StyledBlackButton
 										onClick={event => {
@@ -196,4 +196,4 @@ const FoodForm = () => {
 	);
 };
 
-export default FoodForm;
+export {FoodForm};

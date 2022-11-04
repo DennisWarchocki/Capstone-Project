@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import {BackgroundSoup} from '../components/backgrounds/Background';
-import FoodForm from '../components/FoodForm';
+import {FoodForm} from '../components/FoodForm';
 import Layout from '../components/Layout';
 
 export default function Trackfood() {
